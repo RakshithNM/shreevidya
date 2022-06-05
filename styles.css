@@ -1,0 +1,170 @@
+:root {
+  --sv-bg-color: var(--gradient-25); 
+  --sv-primary-text-color: var(--gray-0);
+  --sv-name-color: var(--indigo-9);
+  --sv-primary-font: 'M PLUS Rounded 1c', sans-serif;
+  --sv-h1-size: clamp(2rem, calc(0.08 * 100vw), 5rem);
+  --sv-h2-size: clamp(1.75rem, calc(0.08 * 100vw), 2.5rem);
+  --sv-h3-size: clamp(1.50rem, calc(0.08 * 100vw), 2.25rem);
+  --sv-h4-size: clamp(1rem, calc(1.7 * 100vw), 1.5rem);
+  --sv-a-size: clamp(1rem, calc(0.04 * 100vw), 1.25rem);
+  --sv-summary-size: clamp(1rem, calc(1.8 * 100vw), 1.65rem);
+}
+
+body {
+  block-size: auto;
+  inline-size: 100vw;;
+  background-image: var(--sv-bg-color);
+  font-family: var(--sv-primary-font);
+  color: var(--sv-primary-text-color);
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "personal"
+    "profile"
+    "experience"
+    "education"
+    "instruments"
+    "internship";
+  gap: 2rem;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+h1 {
+  font-size: var(--sv-h1-size);
+  color: var(--sv-name-color);
+  padding-top: 20px;
+}
+
+h2 {
+  font-size: var(--sv-h2-size);
+}
+
+h3 {
+  font-size: var(--sv-h3-size);
+}
+
+:is(h1, h2) {
+  text-align: center;
+  margin: 0 auto;
+  max-inline-size: 100%;
+}
+
+:is(h4) {
+  max-inline-size: 100%;
+}
+
+main > details {
+  max-inline-size: 100%;
+  width: min(120ch, 100% - 2rem);
+  margin: 0 auto;
+}
+
+section:nth-child(1) > :not(img) {
+  width: min(120ch, 100% - 2rem);
+}
+
+section:nth-child(1) > span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+section:nth-child(1) > span > a {
+    font-size: var(--sv-a-size);
+    color: var(--gray-7);
+}
+
+details:nth-child(2) {
+  grid-area: profile;
+}
+
+details:nth-child(2) > summary::marker {
+  content: "☃︎ ";
+}
+
+details:nth-child(3) {
+  grid-area: experience;
+}
+
+details:nth-child(3) > summary::marker {
+  content: "❄️  ";
+}
+
+details:nth-child(4) {
+  grid-area: education;
+}
+
+details:nth-child(4) > summary::marker {
+  content: "📚 ";
+}
+
+details:nth-child(5) {
+  grid-area: instruments;
+}
+
+details:nth-child(5) > summary::marker {
+  content: "🧰 ";
+}
+
+details:nth-child(6) {
+  grid-area: internship;
+}
+
+details:nth-child(6) > summary::marker {
+  content: "👩‍💼 ";
+}
+
+details:last-child {
+  margin-block-end: 20px;
+}
+
+details :is(li, p) {
+  max-inline-size: 100%;
+}
+
+summary {
+  font-size: var(--sv-summary-size);
+}
+
+details ul {
+  display: grid;
+  gap: 1.5rem;
+}
+
+details > ul {
+  padding: 20px;
+}
+
+details > ul ul:last-of-type {
+  padding: 20px 0 20px 20px;
+}
+
+li::marker {
+  content: "☛ ";
+}
+
+li > p:first-of-type {
+  margin-block-start: 5px;
+  color: var(--gray-4);
+}
+
+li > p:last-of-type {
+  color: var(--gray-5);
+}
+
+@media (min-width: 400px) {
+  grid-template-areas: 
+    "";
+}
