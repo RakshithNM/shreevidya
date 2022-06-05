@@ -32,11 +32,13 @@ main {
 }
 
 img {
-  max-inline-size: 100%;
+  max-inline-size: min(120ch, 100% - 2rem);
   block-size: auto;
-  aspect-ratio: 2/1;
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--radius-blob-4);
+  margin: 20px auto 0px auto;
 }
 
 h1 {
