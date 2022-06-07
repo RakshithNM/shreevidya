@@ -14,10 +14,21 @@
 body {
   block-size: auto;
   inline-size: 100vw;;
-  background-image: var(--sv-bg-color), var(--noise-3);
   font-family: var(--sv-primary-font);
   color: var(--sv-primary-text-color);
   cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='45' height='54' viewport='0 0 100 100' style='fill:white;font-size:27px;'><text y='50%'>⌾</text></svg>") 16 0,auto; 
+  position: relative;
+}
+
+body:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  opacity: 0.6;
+  background-image: var(--sv-bg-color), var(--noise-3);
 }
 
 main {
@@ -30,9 +41,12 @@ main {
     "instruments"
     "internship";
   gap: 2rem;
+  position: relative;
 }
 
 img {
+  -webkit-transform: scale(0.999);
+  transform: scale(0.999);
   max-inline-size: min(120ch, 100% - 2rem);
   block-size: auto;
   aspect-ratio: 1/1;
