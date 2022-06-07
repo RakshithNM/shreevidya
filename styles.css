@@ -14,9 +14,10 @@
 body {
   block-size: auto;
   inline-size: 100vw;;
-  background-image: var(--sv-bg-color);
+  background-image: var(--sv-bg-color), var(--noise-3);
   font-family: var(--sv-primary-font);
   color: var(--sv-primary-text-color);
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='45' height='54' viewport='0 0 100 100' style='fill:white;font-size:27px;'><text y='50%'>⌾</text></svg>") 16 0,auto; 
 }
 
 main {
@@ -38,7 +39,15 @@ img {
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius-blob-4);
+  box-shadow: var(--shadow-2);
+  transition: all 300ms ease-in-out;
+  transition-property: border-radius, box-shadow;;
   margin: 20px auto 0px auto;
+}
+
+img:hover {
+  box-shadow: var(--shadow-4);
+  border-radius: var(--radius-blob-2);
 }
 
 h1 {
