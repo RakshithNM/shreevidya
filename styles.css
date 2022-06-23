@@ -118,6 +118,8 @@ section:last-of-type > a[href$=".pdf"] {
 section:last-of-type {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
+  font-size: var(--sv-h4-size);
 }
 
 details:nth-child(2) {
