@@ -110,6 +110,11 @@ section:nth-child(1) > span > a {
     color: var(--gray-7);
 }
 
+section:nth-child(1) > span > a[href$=".pdf"] {
+  color: var(--blue-9);
+  text-decoration: underline;
+}
+
 details:nth-child(2) {
   grid-area: profile;
 }
