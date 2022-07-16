@@ -3,7 +3,7 @@
   --sv-primary-text-color: var(--gray-0);
   --sv-name-color: var(--indigo-9);
   --sv-primary-font: 'M PLUS Rounded 1c', sans-serif;
-  --sv-h1-size: clamp(2rem, calc(0.08 * 100vw), 5rem);
+  --sv-h1-size: clamp(2rem, calc(0.08 * 100vw), 3rem);
   --sv-h2-size: clamp(1.75rem, calc(0.08 * 100vw), 2.5rem);
   --sv-h3-size: clamp(1.50rem, calc(0.08 * 100vw), 2.25rem);
   --sv-h4-size: clamp(1rem, calc(1.7 * 100vw), 1.5rem);
@@ -89,17 +89,29 @@ section:nth-child(1) > :not(img) {
   width: min(120ch, 100% - 2rem);
 }
 
-section:nth-child(1) > span {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+section > span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 section:nth-child(1) > span > a {
-    font-size: var(--sv-a-size);
-    color: var(--gray-7);
+  font-size: var(--sv-a-size);
+  color: var(--gray-7);
+}
+
+section:last-of-type > a[href$=".pdf"] {
+  color: var(--indigo-9);
+  text-decoration: underline;
+}
+
+section:last-of-type {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: var(--sv-h4-size);
 }
 
 details:nth-child(2) {
