@@ -69,6 +69,7 @@ h1 {
   margin: 0.2rem 0 0;
   text-transform: uppercase;
   text-wrap: balance;
+  line-height: 1;
 }
 
 h2 {
@@ -100,7 +101,7 @@ section > span {
   justify-content: center;
 }
 
-section > span > a {
+section > span > a, details li > a {
   font-weight: 600;
   color: var(--sv-accent);
   text-decoration: none;
@@ -109,7 +110,9 @@ section > span > a {
 }
 
 section > span > a:hover,
-section > span > a:focus-visible {
+section > span > a:focus-visible,
+details li > a:hover,
+details li > a:focus-visible {
   color: var(--sv-accent-strong);
   border-color: currentColor;
 }
@@ -154,6 +157,7 @@ details[open] > summary::after {
 details > ul {
   padding: 1.2rem 1.8rem 1.6rem;
   margin: 0;
+  margin-inline: 1rem;
   display: grid;
   gap: 1.1rem;
   font-family: var(--sv-font-body);
